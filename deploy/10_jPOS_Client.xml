@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<channel-adapter logger="Q2" name="jPOS-Client" class="org.jpos.q2.iso.ChannelAdaptor" realm="external-server">
+
+  <channel class="org.jpos.iso.channel.BASE24TCPChannel" packager="org.jpos.iso.packager.GenericPackager" header="ISO005000077">
+    <property name="packager-config" value="${q2.deploy.packager-config:cfg/packager/internal-cmf.xml}"/>
+    <property name="host" value="127.0.0.1"/>
+    <property name="port" value="10010"/>
+    <property name="timeout" value="450000"/>
+  </channel>
+
+  <in>a-client-send</in>
+  <out>a-client-receive</out>
+  <reconnect-delay>1000</reconnect-delay>
+
+</channel-adapter>

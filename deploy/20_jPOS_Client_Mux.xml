@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<mux class="org.jpos.q2.iso.QMUX" name="internal-mux">
+  <in>a-client-receive</in>
+  <out>a-client-send</out>
+  <unhandled>a-client-unhandled</unhandled>
+  <ready>external-server.ready</ready>
+  <key mti="0100">121</key>
+  <key mti="0120">121</key>
+
+  <!--  <request-listener class="my.paynet.jposclient.listener.request.ExternalServerRequestListener"/>-->
+</mux>
