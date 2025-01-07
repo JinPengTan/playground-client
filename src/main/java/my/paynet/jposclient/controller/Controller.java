@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 public class Controller {
-    private static final int[] fields = {2,3,4,7,11,12,13,14,15,17,18,22,25,32,37,38,39,44,49,60,61,66,125,126,128};
+    private static final int[] fields = {2,3,4,7,11,12,13,14,15,17,18,22,25,32,37,38,39,44,49,60,61,125,126,128};
     private final MUX mux;
     ExecutorService service = Executors.newVirtualThreadPerTaskExecutor();
     AtomicInteger counter = new AtomicInteger(0);
@@ -45,7 +45,7 @@ public class Controller {
             .collect(Collectors.joining());
     }
 
-    @GetMapping("/preauth")
+    @GetMapping("/cp-preauth")
     public String preAuth() {
         ISOMsg isoMsg = new ISOMsg();
         try {
@@ -74,7 +74,6 @@ public class Controller {
             isoMsg.set(49, "458");
             isoMsg.set(60, "HLB UAT2+0000000");
             isoMsg.set(61, "BKRBUAT200000000000");
-            isoMsg.set(66, "1");
             isoMsg.set(125, "P BICIB24 10");
             isoMsg.set(126, "20300011120276100000000000000000000000");
             isoMsg.set(128, ISOUtil.hex2byte("32A6E84B00000000"));
@@ -128,7 +127,6 @@ public class Controller {
             isoMsg.set(49, "458");
             isoMsg.set(60, "HLB UAT2+0000000");
             isoMsg.set(61, "BKRBUAT200000000000");
-            isoMsg.set(66, "1");
             isoMsg.set(125, "P BICIB24 10");
             isoMsg.set(126, "20300011120276100000000000000000000000");
             isoMsg.set(128, ISOUtil.hex2byte("32A6E84B00000000"));
